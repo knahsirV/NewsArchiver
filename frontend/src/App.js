@@ -1,4 +1,5 @@
 import { React, useState, useEffect, useCallback } from "react";
+import ReactLoading from "react-loading";
 import { initializeApp } from "firebase/app";
 import {
   collection,
@@ -71,19 +72,27 @@ const App = () => {
         <div className=' text-left space-y-4 md:w-1/3'>
           <h1 className='text-4xl md:text-5xl font-black title mr-4'>News Archive</h1>
           <hr className='border-2 border-accent md:w-[95%]'></hr>
-          <div className="space-y-3">
+          <div className='space-y-3'>
             <p className=' text-base leading-relaxed text-calPrimary font-medium pr-8'>
-              Choose a date to see the news feeds of CNN and Fox from that day. Click on an article to
-              read it.
+              Choose a date to see the news feeds of CNN and Fox from that day. Click on an article
+              to read it.
             </p>
             <p className=' text-sm leading-relaxed text-calPrimary font-medium pr-8'>
-            DISCLAIMER: Headlines without images were given a random image associated with
-              America
+              DISCLAIMER: Headlines without images were given a random image associated with America
             </p>
           </div>
           <NewsCalendar getNews={getNews} />
         </div>
-        <NewsContent cnn={cnn} fox={fox} />
+        {cnn.length > 0 ? (
+          <NewsContent cnn={cnn} fox={fox} />
+        ) : (
+          <div className='md:h-screen w-2/3 h-max grid place-items-center'>
+            <div className="space-y-4">
+              <ReactLoading type={"spin"} color={"#6CBCC7"} height={100} width={100} />
+              <p className="text-center font-bold">Loading Data...</p>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
