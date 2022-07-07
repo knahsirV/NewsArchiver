@@ -29,6 +29,7 @@ const NewsCalendar = ({ getNews }) => {
                 <Calendar
                   className={"rounded-xl "}
                   maxDate={new Date()}
+                  minDate={new Date("2022-07-07")}
                   onChange={(newDate) => {
                     setIsOpen(false);
                     setDate(newDate);
@@ -46,6 +47,7 @@ const NewsCalendar = ({ getNews }) => {
         <Calendar
           className={"rounded-xl drop-shadow-md"}
           maxDate={new Date()}
+          minDate={new Date("2022-07-07")}
           onChange={(newDate) => {
             setIsOpen(false);
             setDate(newDate);

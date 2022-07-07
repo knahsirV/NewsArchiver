@@ -1,1 +1,2 @@
 # News Archiver
+CNN and Fox are known for reporting with opposing viewpoints over US politics. This application allows users to view and visit the headlines of both news sources for any given date. The frontend is built with React, and the data is pulled with a webscraper built with NodeJS that autmatically runs once every hour and saves the data to a Firebase firestore. Access the [live site here: https://news-archiver-d0853.web.app/](https://news-archiver-d0853.web.app/)
