@@ -25,9 +25,9 @@ const NewsCalendar = ({ getNews }) => {
             {/* Container to center the panel */}
             <div className='flex min-h-full items-center justify-center rounded-xl'>
               {/* The actual dialog panel  */}
-              <Dialog.Panel className='mx-auto max-w-sm rounded-xl bg-white'>
+              <Dialog.Panel className='mx-auto max-w-sm rounded-xl bg-white animate-fade-in-up'>
                 <Calendar
-                  className={"rounded-xl "}
+                  className={"rounded-xl"}
                   maxDate={new Date()}
                   minDate={new Date("2022-07-07")}
                   onChange={(newDate) => {
