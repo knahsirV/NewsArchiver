@@ -67,7 +67,7 @@ const App = () => {
     <>
       <meta name='theme-color' content='rgb(241 245 249)' />
       <div
-        className={`md:h-screen overflow-hidden w-screen bg-slate-100 pt-10 md:pt-20 pl-6 md:flex md:items-center text-textDark`}
+        className={`h-screen overflow-hidden w-screen bg-slate-100 pt-10 md:pt-20 pl-6 md:flex md:items-center text-textDark`}
       >
         <div className=' text-left space-y-4 md:w-1/3'>
           <h1 className='text-4xl md:text-5xl font-black title mr-4'>News Archive</h1>
@@ -86,9 +86,11 @@ const App = () => {
         {cnn.length > 0 ? (
           <NewsContent cnn={cnn} fox={fox} />
         ) : (
-          <div className='md:h-screen w-2/3 h-max grid place-items-center'>
+          <div className='md:h-screen mt-20 md:w-2/3 md:grid place-content-center pr-6'>
             <div className="space-y-4">
-              <ReactLoading type={"spin"} color={"#6CBCC7"} height={100} width={100} />
+              <div class="flex justify-center w-full">
+                <ReactLoading type={"spin"} color={"#6CBCC7"} height={100} width={100} />
+              </div>
               <p className="text-center font-bold">Loading Data...</p>
             </div>
           </div>
