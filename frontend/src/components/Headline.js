@@ -20,7 +20,7 @@ const Headline = ({ headlines, source }) => {
     image && ((source === "CNN" && image.includes("cdn")) || source === "FOX");
 
   return (
-    <div className='md:columns-3 overflow-y-auto relative space-y-4 pr-6 rounded-lg'>
+    <div className='md:columns-3 overflow-y-auto relative space-y-4 pr-6 rounded-lg animate-fade-in-up'>
       {headlines.map((headline, index) => {
         return (
           <a
@@ -28,7 +28,7 @@ const Headline = ({ headlines, source }) => {
             rel='noreferrer'
             target='_blank'
             key={index}
-            className='block bg-white overflow-hidden border-b-4 border-[#6CBCC7] rounded-md drop-shadow-xl font-medium w-full relative'
+            className='block hover:-translate-y-2 hover:scale-95 transition bg-white overflow-hidden border-b-4 border-[#6CBCC7] rounded-md drop-shadow-xl font-medium w-full relative'
           >
             {!validImgSrc(headline.img) ? (
               <div className='absolute bg-white/50 top-0 right-0 rounded-tr-md rounded-bl-md p-2 text-xs text-black/50'>

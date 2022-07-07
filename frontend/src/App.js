@@ -83,7 +83,7 @@ const App = () => {
             </p>
             <a
               href='https://github.com/knahsirV/NewsArchiver'
-              className='hover:underline text-sm leading-relaxed text-calPrimary font-medium pr-8 flex'
+              className='hover:underline transition text-sm leading-relaxed text-calPrimary font-medium pr-8 flex'
               rel='noreferrer'
               target='_blank'
             >
