@@ -9,9 +9,8 @@ import {
   limitToLast,
   orderBy,
 } from "firebase/firestore";
-import Box from "@mui/material/Box";
-import Calendar from "./components/Calendar";
-import Headline from "./components/Headline";
+import NewsCalendar from "./components/NewsCalendar";
+import NewsContent from "./components/NewsContent";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBu2daUzvXvgj5PC3k4dC0ShF2YOTzETww",
@@ -24,6 +23,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 const App = () => {
   const db = getFirestore(app);
 
@@ -63,12 +63,29 @@ const App = () => {
   }, [getNews]);
 
   return (
-    <div className='App'>
-      <Box></Box>
-      <Calendar getNews={getNews} />
-      <Headline newsSource='CNN' headlines={cnn} />
-      <Headline newsSource='Fox News' headlines={fox} />
-    </div>
+    <>
+      <meta name='theme-color' content='rgb(241 245 249)' />
+      <div
+        className={`md:h-screen overflow-hidden w-screen bg-slate-100 pt-10 md:pt-20 pl-6 md:flex md:items-center text-textDark`}
+      >
+        <div className=' text-left space-y-4 md:w-1/3'>
+          <h1 className='text-4xl md:text-5xl font-black title mr-4'>News Archive</h1>
+          <hr className='border-2 border-accent md:w-[95%]'></hr>
+          <div className="space-y-3">
+            <p className=' text-base leading-relaxed text-calPrimary font-medium pr-8'>
+              Choose a date to see the news feeds of CNN and Fox from that day. Click on an article to
+              read it.
+            </p>
+            <p className=' text-sm leading-relaxed text-calPrimary font-medium pr-8'>
+            DISCLAIMER: Headlines without images were given a random image associated with
+              America
+            </p>
+          </div>
+          <NewsCalendar getNews={getNews} />
+        </div>
+        <NewsContent cnn={cnn} fox={fox} />
+      </div>
+    </>
   );
 };
 
