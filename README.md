@@ -2,7 +2,7 @@
 *This project was inspired by Fireship's video: <a href="https://www.youtube.com/watch?v=JTOJsU3FSD8" target="_blank">7 Full Stack App Ideas for Developers</a>.*
 <br /><br />
 CNN and Fox are known for reporting with opposing viewpoints over US politics. This application allows users to view and visit the headlines of both news sources for any given date, allowing them to compare the reporting from both sides at any moment. Access the
-<a href="https://news-archiver-d0853.web.app/" target="_blank">live site here</a>.
+<a href="https://news-archiver-d0853.web.app/" target="_blank">live site here</a> (Use a Chromium based browser for the best experience on desktop).
 
 ## Components
 
