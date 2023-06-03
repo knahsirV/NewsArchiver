@@ -1,10 +1,11 @@
 # News Archiver
-*This project was inspired by Fireship's video: <a href="https://www.youtube.com/watch?v=JTOJsU3FSD8" target="_blank">7 Full Stack App Ideas for Developers</a>.*
+
+_This project was inspired by Fireship's video: <a href="https://www.youtube.com/watch?v=JTOJsU3FSD8" target="_blank">7 Full Stack App Ideas for Developers</a>._
 
 CNN and Fox are known for reporting with opposing viewpoints over US politics. This application allows users to view and visit the headlines of both news sources for any given date, allowing them to compare the reporting from both sides at any moment. Access the
 <a href="https://news-archiver-d0853.web.app/" target="_blank">live site here</a> (Use a Chromium based browser for the best experience on desktop).
 <br /><br />
-**NOTE:** As of November 30, 2022, Heroku no longer has a free access plan, so the archiver has stopped operating after November 29, 2022. To try out the applications features, please select a date before November 30, 2022. 
+<strong> **NOTE:** As of November 30, 2022, Heroku no longer has a free access plan, so the archiver has stopped operating after November 29, 2022. To try out the application's features, please select a date before November 30, 2022. </strong>
 
 ## Working Demo
 
