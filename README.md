@@ -5,7 +5,9 @@ _This project was inspired by Fireship's video: <a href="https://www.youtube.com
 CNN and Fox are known for reporting with opposing viewpoints over US politics. This application allows users to view and visit the headlines of both news sources for any given date, allowing them to compare the reporting from both sides at any moment. Access the
 <a href="https://news-archiver-d0853.web.app/" target="_blank">live site here</a> (Use a Chromium based browser for the best experience on desktop).
 <br /><br />
-<strong> **NOTE:** As of November 30, 2022, Heroku no longer has a free access plan, so the archiver has stopped operating after November 29, 2022. To try out the application's features, please select a date before November 30, 2022. </strong>
+<strong> **NOTE:** The archiver was initially hosted on Heroku, but was moved to Github Actions on
+June 3, 2023, after Heroku's free tier was no longer available starting November 30, 2022. To try out the application's features, please choose a date from June 7, 2022 to November 30, 2022, or from June 3,
+2023 onwards. </strong>
 
 ## Working Demo
 

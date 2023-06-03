@@ -101,12 +101,13 @@ const App = () => {
               View Github Repo
             </a>
             <p className=' text-xs leading-relaxed text-calPrimary font-medium pr-8'>
-              DISCLAIMER: Headlines without images were given a random image associated with America
+              Headlines without images were given a random image associated with America
             </p>
             <p className=' text-xs font-bold leading-relaxed text-calPrimary pr-8'>
-              DISCLAIMER: As of November 30, 2022, Heroku no longer has a free access plan, so the
-              archiver has stopped operating after November 29, 2022. Please select a date before
-              November 30, 2022.
+              NOTE: The archiver was initially hosted on Heroku, but was moved to Github Actions on
+              June 3, 2023, after Heroku's free tier was no longer available starting November 30,
+              2022. Please choose a date from June 7, 2022 to November 30, 2022, or from June 3,
+              2023 onwards.
             </p>
           </div>
           <NewsCalendar getNews={getNews} />
