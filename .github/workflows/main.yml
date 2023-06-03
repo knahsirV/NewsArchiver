@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: "16"
       - run: npm install
-      - run: node index.js
+      - run: node NewsArchiver.js
