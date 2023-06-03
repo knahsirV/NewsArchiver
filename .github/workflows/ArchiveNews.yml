@@ -1,4 +1,4 @@
-name: Scheduled Job
+name: Archive News
 
 on:
   workflow_dispatch:
