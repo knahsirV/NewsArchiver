@@ -5,7 +5,7 @@ import { Dialog } from "@headlessui/react";
 import "./calendar.css";
 
 const NewsCalendar = ({ getNews }) => {
-  const [date, setDate] = useState(new Date(2022, 10, 29, 0, 0, 0));
+  const [date, setDate] = useState(new Date());
   let [isOpen, setIsOpen] = useState(false);
   return (
     <div className=' rounded-3xl leading'>
@@ -28,7 +28,7 @@ const NewsCalendar = ({ getNews }) => {
               <Dialog.Panel className='mx-auto max-w-sm rounded-xl bg-white animate-fade-in-up'>
                 <Calendar
                   className={"rounded-xl"}
-                  maxDate={new Date("2022-11-29")}
+                  maxDate={new Date()}
                   minDate={new Date("2022-07-07")}
                   onChange={(newDate) => {
                     setIsOpen(false);
@@ -36,11 +36,11 @@ const NewsCalendar = ({ getNews }) => {
                     getNews(newDate);
                   }}
                   value={date}
-                  // tileDisabled={({ date, view }) =>
-                  //   view === "month" &&
-                  //   date > new Date("2022-11-29") &&
-                  //   date < new Date("2023-06-04")
-                  // }
+                  tileDisabled={({ date, view }) =>
+                    view === "month" &&
+                    date > new Date("2022-11-29") &&
+                    date < new Date("2023-06-03")
+                  }
                 />
               </Dialog.Panel>
             </div>
@@ -51,7 +51,7 @@ const NewsCalendar = ({ getNews }) => {
         <h2 className='text-2xl md:ml-1 font-bold text-textDark'>{date.toDateString()}</h2>
         <Calendar
           className={"rounded-xl drop-shadow-md"}
-          maxDate={new Date("2022-11-30")}
+          maxDate={new Date()}
           minDate={new Date("2022-07-07")}
           onChange={(newDate) => {
             setIsOpen(false);
@@ -59,9 +59,9 @@ const NewsCalendar = ({ getNews }) => {
             getNews(newDate);
           }}
           value={date}
-          // tileDisabled={({ date, view }) =>
-          //   view === "month" && date > new Date("2022-11-29") && date < new Date("2023-06-04")
-          // }
+          tileDisabled={({ date, view }) =>
+            view === "month" && date > new Date("2022-11-29") && date < new Date("2023-06-03")
+          }
         />
       </div>
     </div>

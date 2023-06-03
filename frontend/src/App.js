@@ -47,6 +47,7 @@ const App = () => {
       const newsSnapshot = await getDocs(newsQuery);
       let newsChange = false;
       newsSnapshot.forEach((doc) => {
+        console.log(doc.data());
         newsChange = true;
         setCnn(doc.data().cnn);
         setFox(doc.data().fox);
@@ -60,7 +61,7 @@ const App = () => {
   );
 
   useEffect(() => {
-    getNews(new Date("2022-11-29"));
+    getNews(new Date());
   }, [getNews]);
 
   return (

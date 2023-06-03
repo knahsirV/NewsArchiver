@@ -14,37 +14,37 @@ cnnHeadlines = [];
 foxHeadlines = [];
 
 const scrapeNews = async () => {
-  // console.log(`Starting Scrape #${Date.now().toString()}`);
+  console.log(`Starting Scrape #${Date.now().toString()}`);
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
-  // console.log(`Scrape #${Date.now().toString()}: Launched browser`);
+  console.log(`Scrape #${Date.now().toString()}: Launched browser`);
   const page = await browser.newPage();
-  // console.log(`Scrape #${Date.now().toString()}: Opened new page`);
+  console.log(`Scrape #${Date.now().toString()}: Opened new page`);
   await page.goto("https://edition.cnn.com/politics");
-  // console.log(`Scrape #${Date.now().toString()}: Navigated to http://edition.cnn.com/politics`);
+  console.log(`Scrape #${Date.now().toString()}: Navigated to http://edition.cnn.com/politics`);
   headings = await page.evaluate(() => {
-    headings_elements = document.querySelectorAll("h3 > a");
+    headings_elements = document.querySelectorAll(".container__headline > span");
     headings_array = Array.from(headings_elements);
-    media_elements = document.querySelectorAll(".media > a > img");
+    media_elements = document.querySelectorAll(".image__picture > img");
     media_array = Array.from(media_elements).map((image) => image.getAttribute("src"));
-    // console.log(`Scrape #${Date.now().toString()}: Scraped all necessary data from CNN`);
     return headings_array.map((heading, index) => {
       return {
-        heading: heading.text,
-        link: heading.href,
+        heading: heading.textContent,
+        link: heading.closest("a").href,
         img: media_array[index],
       };
     });
   });
+
   cnnHeadlines = headings;
-  // console.log(`Scrape #${Date.now().toString()}: CNN data pulled in correct format`);
+  console.log(`Scrape #${Date.now().toString()}: CNN data pulled in correct format`);
 
   await page.goto("https://www.foxnews.com/politics");
-  // console.log(`Scrape #${Date.now().toString()}: Navigated to http://www.foxnews.com/politics`);
+  console.log(`Scrape #${Date.now().toString()}: Navigated to http://www.foxnews.com/politics`);
   headings = await page.evaluate(() => {
     headings_elements = document.querySelectorAll(".title > a");
     media_elements = document.querySelectorAll("article > .m > a > picture > img");
     media_array = Array.from(media_elements).map((image) => image.getAttribute("src"));
-    // console.log(`Scrape #${Date.now().toString()}: Scraped all necessary data from Fox`);
+    console.log(`Scrape #${Date.now().toString()}: Scraped all necessary data from Fox`);
     return Array.from(headings_elements).map((heading, index) => {
       return {
         heading: heading.text,
@@ -54,10 +54,10 @@ const scrapeNews = async () => {
     });
   });
   foxHeadlines = headings;
-  // console.log(`Scrape #${Date.now().toString()}: CNN data pulled in correct format`);
+  console.log(`Scrape #${Date.now().toString()}: CNN data pulled in correct format`);
 
   await browser.close();
-  // console.log(`Scrape #${Date.now().toString()}: Closed browser`);
+  console.log(`Scrape #${Date.now().toString()}: Closed browser`);
 
   // console.log(`Scrape #${Date.now().toString()}:`);
   // console.log("CNN:");
@@ -70,6 +70,6 @@ const scrapeNews = async () => {
     fox: foxHeadlines,
     date: fs.firestore.FieldValue.serverTimestamp(),
   });
-  // console.log(`Scrape #${Date.now().toString()}: Saved data to db\n`);
+  console.log(`Scrape #${Date.now().toString()}: Saved data to db\n`);
 };
 scrapeNews();
